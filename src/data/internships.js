@@ -156,5 +156,5 @@ export const timelineLabels = [
   { key: "undergraduate2", label: "学部2年", year: "2022" },
   { key: "undergraduate3", label: "学部3年", year: "2023" },
   { key: "master1", label: "修士1年", year: "2024" },
-  { key: "master2", label: "修士2年", year: "2025-2026" },
+  { key: "master2", label: "修士2年", year: "2025" },
 ];

@@ -11,7 +11,7 @@ export const TimelineEvent = ({ company, role, start, end, startMonth, duration,
 
   // 終了点の位置（0-100%）
   const endMonth = startMonth + duration - 1;
-  const endPos = (endMonth / 12) * 100;
+  const endPos = Math.min((endMonth / 12) * 100, 100); // 12月を超える場合は100%でクリップ
 
   // ゲージの縦位置（上から順に18pxずつ）
   const gaugeTop = gaugeRow * 18;

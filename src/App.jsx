@@ -11,7 +11,7 @@ import { profile } from "./data/profile";
 import { content } from "./data/content";
 import { certifications } from "./data/certifications";
 import { InternTimeline } from "./components/InternTimeline";
-import { SugorokuTimeline } from "./components/SugorokuTimeline";
+import { InternshipTable } from "./components/InternshipTable";
 
 function App() {
   const deckRef = useRef(null);
@@ -153,6 +153,12 @@ function App() {
             </ul>
           </section>
 
+          {/* インターンシップ一覧テーブル */}
+          <InternshipTable />
+
+          {/* タイムライン - メモリ付き横軸 */}
+          <InternTimeline />
+
           <section>
             <h2>自分の場合のロール遷移</h2>
             <div style={{ fontSize: "1.2em", marginTop: "80px" }}>
@@ -178,10 +184,6 @@ function App() {
               ))}
             </ul>
           </section>
-
-          {/* タイムライン - メモリ付き横軸 */}
-          <InternTimeline />
-
           {/* 選考対策 */}
           <section>
             <h2>インターン選考対策📝</h2>
@@ -375,6 +377,26 @@ function App() {
               </li>
               <li className="fragment">一緒に新しい発見や経験を得られる</li>
             </ul>
+          </section>
+
+          <section>
+            <h3>OSS💻</h3>
+            <div
+              style={{
+                textAlign: "left",
+                fontSize: "0.85em",
+                maxWidth: "800px",
+                margin: "0 auto",
+              }}
+            >
+              {content.externalActivities.oss.map((item, index) => (
+                <p
+                  key={index}
+                  className="fragment"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              ))}
+            </div>
           </section>
 
           <section>

@@ -519,6 +519,39 @@ body {
     }
 }
 
+/* インターンシップテーブル */
+.internship-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 0.55em;
+    max-width: 900px;
+    width: 100%;
+}
+
+.internship-table thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: left;
+}
+
+.internship-table th,
+.internship-table td {
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.internship-table tbody tr {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.internship-table tbody tr:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.internship-table tbody tr:hover {
+    background-color: rgba(23, 178, 195, 0.2);
+}
+
 /* プリント用スタイル */
 @media print {
     .reveal .slides {
