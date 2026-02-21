@@ -20,8 +20,8 @@ export const content = {
     "🚀 <strong>早めから始めよう</strong> - たくさんの会社を経験",
     "🎯 「全知全能」ではなく、<strong>「自分のエリア」</strong>や専門性を探す",
     "📚 それぞれの会社には<strong>「ベストプラクティス」</strong>がある",
-    "💪 様々な会社 × いろんなロール = 正社員より技術力で圧倒できる",
-    "🏢 いろんな<strong>カルチャー</strong>を学べる機会",
+    "💪 様々な会社 × いろんなロール を経験 → <strong>そこらの正社員より技術力で圧倒できる</strong>",
+    "🏢 いろんな<strong>カルチャー</strong>を経験し、様々な環境でどう動くべきか研究できる",
   ],
 
   // ロール遷移
@@ -39,23 +39,23 @@ export const content = {
   internMindset: [
     "🦁 <strong>Boldにいくべき</strong> - 良いと思ったことは良い、間違いは間違いと言う",
     "🙇 ただし<strong>低姿勢</strong>は重要 - 学ばせてもらっている立場を意識",
-    "🔄 他のロールの経験をチームにフィードバック・還元して活躍",
+    "🔄 別のロールの経験をチームにフィードバック・還元すれば<strong>余裕で活躍できる</strong>",
     "🌐 <strong>インターン界隈は意外と狭い</strong> - ネットワークを大事に",
   ],
 
   // 選考対策
   interviewPrep: {
     resume: [
-      "最初はアピールできることがなくてもOK",
-      "自分を<strong>客観的に評価</strong>できるきっかけ",
-      "<strong>どのように自分を魅せるか</strong>という戦略が立てられる",
-      "常に履歴書をUpdate → いつでも応募できる体制",
+      "最初はアピールできることがなくてもOK、とにかく作ることが大事",
+      "自分を<strong>客観的に評価</strong>し、振り返るきっかけになる",
+      "<strong>どのように自分を魅せるか</strong>という戦略が自然に立てられる",
+      "常に履歴書をアップデートし、いつでも応募できる体制を整えよう",
       "ポジション公開後の<strong>最初の選考ラウンド</strong>に入れるのが一番",
     ],
     slides: [
-      "❌ 面接に<strong>再現性がない</strong>問題",
-      "❌ 期待していない方向にフォーカスが当てられる",
-      "✅ スライドで<strong>再現性</strong>と<strong>魅せ方</strong>を調節",
+      "❌ 面接に<strong>再現性がない</strong> → 毎回同じアピールができない",
+      "❌ 自分が期待していない方向に話が進むことがある",
+      "✅ スライドで<strong>再現性</strong>と<strong>魅せ方</strong>を調節できる",
       "✅ 面接官も情報整理しやすく、良い質問につながる",
     ],
     onlineProfile: [
@@ -82,16 +82,16 @@ export const content = {
     ],
     benefits: [
       "🌏 グローバル環境で働く楽しさ・刺激の大きさ",
-      "🎯 就活軸に<strong>「グローバル」</strong>が追加",
-      "🤝 世界中のインターン生との交流",
-      "📈 9ヶ月で英語コミュニケーション力が大幅向上",
-      "💼 実績として大きな強みに → 複数オファー獲得",
+      "🎯 就活軸に<strong>「グローバル」</strong>というキーワードが加わった",
+      "🤝 世界中のインターン生との交流・コラボレーション",
+      "📈 最初の3ヶ月は苦労したが、9ヶ月で大きく成長",
+      "💼 実績として大きな強みに → 複数の会社からオファー獲得",
     ],
     whyNow: [
       "📚 インターンは<strong>成長が許される場</strong>",
-      "❌ 中途は即戦力が求められる → 英語・グローバル経験が前提",
-      "✅ インターンは要件がゆるく、挑戦できる",
-      "🚀 <strong>挑戦できるチャンスは学生の時だけ!</strong>",
+      "❌ 中途は即戦力が前提 → 英語やグローバル経験がないと厳しい",
+      "✅ インターンなら要件がゆるく、<strong>成長が許される</strong>",
+      "🚀 <strong>挑戦できるチャンスは学生の時!</strong>",
     ],
   },
 
@@ -104,11 +104,12 @@ export const content = {
     ],
     techEvents: [
       "コミュニティでの<strong>エンゲージメント</strong>を大事に",
-      "学生だからといって萎縮する必要なし!",
-      "なんなら学生という身分で<strong>チヤホヤされる</strong> 😄",
+      "社会人が多い場でも学生だからといって萎縮する必要なし!",
+      "学生をアピールすると<strong>優遇される＆チヤホヤされる</strong> 😄",
       "情報を仕入れるきっかけ、ネットワークの構築",
       "参加すること自体が<strong>実績</strong>になる",
       "競技イベントでの実績は<strong>一生の宝物</strong>",
+      "知らない人でも積極的に話しかけよう。<strong>コミュ力を磨こう</strong>",
     ],
     recommendedEvents: [
       "Go Conference",
@@ -117,11 +118,11 @@ export const content = {
       "KubeCon",
     ],
     oss: [
-      "普段使っているライブラリにバグを見つけたり不自由だなぁと思うようなことがあったら<strong>IssueやPRを出してみよう</strong>",
+      "普段使っているライブラリにバグを見つけたり不便に感じたら<strong>IssueやPRを出してみよう</strong>",
       "誰でも出せるのでやるっきゃない",
       "世の中の開発者に使われるコードの中に<strong>自分のコードが含まれるなんて幸せ</strong>",
-      "Release Noteに自分の名前がMentionされるのがあるととても嬉しい＋<strong>実績になる</strong>のでおすすめ",
-      "世の中のいろんなアプリケーションのアーキテクチャを知れるので<strong>自分の知見がさらに深くなる</strong>",
+      "Release Noteに名前がMentionされるととても嬉しい＋<strong>実績になる</strong>",
+      "いろんなアプリケーションのアーキテクチャを知れるので<strong>自分の知見がさらに深くなる</strong>",
     ],
     ctf: [
       "<strong>CTF = Capture The Flag</strong>",
@@ -136,11 +137,22 @@ export const content = {
       "<strong>「フルスクラッチ」</strong>で何かを作ることに慣れる",
       "毎回フィードバックしていくことで成長",
     ],
+    hackathonAchievements: [
+      { name: "サポーターズ Monthly Hackathon", count: "x2" },
+      { name: "Yahoo Open Hack U Osaka" },
+      { name: "JPHacks" },
+      { name: "Japan Connect Hackathon 2024", award: "👑最優秀賞" },
+      { name: "GMO kitaQ DevSecOpsThon 2024", award: "👑最優秀賞" },
+      { name: "Track Job Hackathon", award: "👑優秀賞" },
+      { name: "Progate Hackathon Vol.2", award: "👑エムスリー賞" },
+      { name: "Engineer Guild Hackathon 決勝", award: "👑4位 / エムスリー賞" },
+      { name: "Engineer Guild Hackathon 決勝", award: "👑HRBrain賞" },
+    ],
     community: {
       why: [
         "❌ インターンでは機密保持があり、マネジメント経験はつけづらい",
         "✅ Openな場でのマネジメント経験が重要",
-        "✅ エピソードトークは多いほど面接で有利",
+        "✅ エピソードトークは増やせるだけ増やすと<strong>面接で話すネタに困らない</strong>",
         "✅ 自分のアイデンティティの一つになる",
       ],
       examples: [
@@ -156,9 +168,9 @@ export const content = {
       "新卒として資格は<strong>必須ではない</strong>",
       "IT系の資格は高額",
       "しかし<strong>定量的に評価してもらう材料</strong>として優秀",
-      "「魅せたい自分のプロフィール」に沿ったものを取る",
-      "話のネタになる、履歴書を鮮やかにする",
-      "体系的な知識を得る手助けになる",
+      "「魅せたい自分のプロフィール」に沿って取得するのがおすすめ",
+      "話のネタになり、履歴書を鮮やかにする<strong>とっておきの材料</strong>",
+      "資格を学習のレールにすることで<strong>体系的な知識</strong>が得られる",
     ],
   },
 

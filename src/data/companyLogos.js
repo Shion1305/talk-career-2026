@@ -62,6 +62,10 @@ export const companyLogos = {
     color: "#8B7FA8",
     logo: "/logos/playstation.png",
   },
+  "Tokyo University": {
+    initial: "東大",
+    color: "#4A7A8C",
+  },
   "Goldman Sachs": {
     initial: "GS",
     color: "#4A90E2",

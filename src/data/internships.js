@@ -23,6 +23,15 @@ export const internships = {
   // 学部3年 (2023)
   undergraduate3: [
     {
+      company: "Tokyo University",
+      role: "SWE Intern (Contract)",
+      start: "23/06",
+      end: null,
+      startMonth: 6,
+      duration: 1,
+      color: "#4A7A8C",
+    },
+    {
       company: "Cookpad",
       role: "Tech Workshop",
       start: "23/07",

@@ -10,6 +10,7 @@ import "./styles/custom.css";
 import { profile } from "./data/profile";
 import { content } from "./data/content";
 import { certifications } from "./data/certifications";
+import { getCompanyLogo } from "./data/companyLogos";
 import { InternTimeline } from "./components/InternTimeline";
 import { InternshipTable } from "./components/InternshipTable";
 
@@ -88,12 +89,27 @@ function App() {
             }}
           >
             <ul>
-              {profile.career.map((item, index) => (
-                <li key={index}>
-                  {item.icon}{" "}
-                  {item.highlight ? <strong>{item.text}</strong> : item.text}
-                </li>
-              ))}
+              {profile.career.map((item, index) => {
+                // Goldman Sachsの場合はロゴを表示
+                if (item.text.includes("Goldman Sachs")) {
+                  return (
+                    <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
+                      <img src="/logos/goldman_sachs.png" alt="Goldman Sachs" style={{
+                        height: '100px',
+                        width: 'auto',
+                        objectFit: 'contain'
+                      }} />
+                      {item.highlight ? <strong>{item.text}</strong> : item.text}
+                    </li>
+                  );
+                }
+                return (
+                  <li key={index}>
+                    {item.icon}{" "}
+                    {item.highlight ? <strong>{item.text}</strong> : item.text}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -200,6 +216,25 @@ function App() {
                 />
               ))}
             </ul>
+          </section>
+
+          {/* 履歴書の例 - 変遷と日英版 */}
+          <section>
+            <h3>履歴書の変遷📝</h3>
+            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+              <div style={{ flex: 1, textAlign: 'center' }}>
+                <img src="/resumes/before-202305.jpg" alt="初期の履歴書" style={{ maxHeight: '480px', width: 'auto', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.65em', marginTop: '8px' }}>2023年5月以前</p>
+              </div>
+              <div style={{ flex: 1, textAlign: 'center' }}>
+                <img src="/resumes/Resume-JP.jpg" alt="履歴書（日本語）" style={{ maxHeight: '480px', width: 'auto', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.65em', marginTop: '8px' }}>現在（日本語版）</p>
+              </div>
+              <div style={{ flex: 1, textAlign: 'center' }}>
+                <img src="/resumes/Resume-EN.jpg" alt="Resume (English)" style={{ maxHeight: '480px', width: 'auto', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.65em', marginTop: '8px' }}>現在（英語版）</p>
+              </div>
+            </div>
           </section>
 
           <section>
@@ -379,6 +414,57 @@ function App() {
             </ul>
           </section>
 
+          {/* 技術イベントの写真 - Go Conference */}
+          <section>
+            <h3>Go Conference📸</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '20px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/event-go-conference-logo.png" alt="Go Conference ロゴ" style={{ maxHeight: '300px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>Go Conference ロゴ</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/go-conference-stand.png" alt="Go Conference 企業ブース" style={{ maxHeight: '300px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>企業ブースで交流</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 技術イベントの写真 - Ruby Kaigi */}
+          <section>
+            <h3>Ruby Kaigi📸</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '20px', alignItems: 'center' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/event-ruby-kaigi-logo.png" alt="Ruby Kaigi ロゴ" style={{ maxHeight: '250px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>Ruby Kaigi</p>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', width: '100%' }}>
+                <div style={{ textAlign: 'center' }}>
+                  <img src="/photos/event-ruby-kaigi-people.png" alt="Ruby Kaigi 参加者" style={{ maxHeight: '250px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                  <p style={{ fontSize: '0.7em', marginTop: '10px' }}>参加者との交流</p>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <img src="/photos/event-ruby-kaigi-people1.png" alt="Ruby Kaigi 集合写真" style={{ maxHeight: '250px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                  <p style={{ fontSize: '0.7em', marginTop: '10px' }}>集合写真</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 技術イベントの写真 - KubeCon & その他 */}
+          <section>
+            <h3>KubeCon & セキュリティイベント📸</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '20px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/event-kubecon-2025.jpg" alt="KubeCon 2025" style={{ maxHeight: '300px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>KubeCon 2025</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/event-layerx-security-people.jpeg" alt="LayerX セキュリティイベント" style={{ maxHeight: '300px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>LayerX セキュリティイベント</p>
+              </div>
+            </div>
+          </section>
+
           <section>
             <h3>OSS💻</h3>
             <div
@@ -419,6 +505,15 @@ function App() {
             </div>
           </section>
 
+          {/* CTFの写真 */}
+          <section>
+            <h3>CTF参加の様子🚩</h3>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px' }}>
+              <img src="/photos/ctf-seccon-beginners.png" alt="SECCON Beginners CTF" style={{ maxHeight: '500px', maxWidth: '90%', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+            </div>
+            <p style={{ fontSize: '0.7em', marginTop: '15px', textAlign: 'center' }}>SECCON Beginners CTF</p>
+          </section>
+
           <section>
             <h3>ハッカソン💻</h3>
             <div
@@ -437,6 +532,119 @@ function App() {
                   dangerouslySetInnerHTML={{ __html: item }}
                 />
               ))}
+            </div>
+          </section>
+
+          {/* ハッカソン実績リスト */}
+          <section>
+            <h3>自分の場合 - ハッカソン実績🏆</h3>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '15px 30px',
+              fontSize: '0.75em',
+              textAlign: 'left',
+              maxWidth: '900px',
+              margin: '30px auto',
+              padding: '0 20px'
+            }}>
+              {content.externalActivities.hackathonAchievements.map((item, index) => (
+                <div
+                  key={index}
+                  className="fragment"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '10px',
+                    background: item.award ? 'rgba(255, 215, 0, 0.1)' : 'rgba(255, 255, 255, 0.05)',
+                    borderRadius: '8px',
+                    border: item.award ? '2px solid rgba(255, 215, 0, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <span style={{ fontSize: '1.2em' }}>
+                    {item.award ? '🏆' : '📋'}
+                  </span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontWeight: item.award ? 'bold' : 'normal' }}>
+                      {item.name} {item.count || ''}
+                    </div>
+                    {item.award && (
+                      <div style={{ fontSize: '0.9em', color: '#FFD700', marginTop: '3px' }}>
+                        {item.award}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ハッカソンの写真 - プロダクト */}
+          <section>
+            <h3>ハッカソン作品例🏆</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', padding: '15px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-jch-product.png" alt="JCHハッカソン プロダクト" style={{ maxHeight: '220px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.6em', marginTop: '10px' }}>医療AIプロダクト</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-jch-arch.png" alt="JCHハッカソン アーキテクチャ" style={{ maxHeight: '220px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.6em', marginTop: '10px' }}>システムアーキテクチャ</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-lgtm-product.png" alt="LGTMハッカソン プロダクト" style={{ maxHeight: '220px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.6em', marginTop: '10px' }}>セキュリティツール</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-devsecops-arch.png" alt="DevSecOps アーキテクチャ" style={{ maxHeight: '220px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.6em', marginTop: '10px' }}>DevSecOps設計</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ハッカソンの写真 - DevSecOps優勝 */}
+          <section>
+            <h3>DevSecOpsThon 2024 - 最優秀賞🏆</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '20px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-devsecops-win.png" alt="DevSecOps 優勝" style={{ maxHeight: '280px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>最優秀賞受賞🏆</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-devsecops-people.png" alt="DevSecOps チーム" style={{ maxHeight: '280px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>チームメンバー</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ハッカソンの写真 - その他の作品 */}
+          <section>
+            <h3>その他のハッカソン🎉</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '20px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-jch.png" alt="Japan Connect Hackathon" style={{ maxHeight: '280px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>Japan Connect Hackathon</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-itadakimasu.png" alt="いただきますハッカソン" style={{ maxHeight: '280px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>いただきますハッカソン</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ハッカソンの写真 - アーキテクチャ詳細 */}
+          <section>
+            <h3>プロダクトアーキテクチャ設計📐</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', padding: '20px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-lgtm-product-arch.png" alt="LGTM アーキテクチャ" style={{ maxHeight: '280px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>セキュリティツール設計</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <img src="/photos/hackathon-aws.jpg" alt="AWSハッカソン" style={{ maxHeight: '280px', width: 'auto', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }} />
+                <p style={{ fontSize: '0.7em', marginTop: '10px' }}>AWSハッカソン</p>
+              </div>
             </div>
           </section>
 
